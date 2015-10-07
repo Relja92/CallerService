@@ -1,0 +1,90 @@
+ <div class='container main'>
+     
+     <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Careful</h3>
+        </div>
+        <div class="modal-body">
+            <span>Please don't leave anything empty!</span>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="hideModal()">Close</button>
+        </div>
+    </script>
+     
+     
+     
+                <div class="playPause col-md-12">
+                    <img class="playSound" ng-click='playCall()' src="img/Play-Normal-icon.png" height="100px" width='100px'>
+                    <audio id="audio"></audio>
+                    <img class="pauseSound" ng-click='pauseCall()' src="img/pause.png" height="100px" width='100px'>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <p class="customerScoreText">Customer Score </p>
+                    </div>
+                    <div class="col-md-6 setTopMargin">
+                          <table class="customerCheckBox">
+                                <tr ng-repeat="customerScore in customerScoreBox">
+                                  <td>
+                                    <input type="checkbox" ng-model="customerScore.checked" ng-click="updateSelectionCustomer($index, customerScoreBox)">{{customerScore.name}}</input>
+                                  </td>
+                                </tr>
+                          </table>
+                    </div>
+                      <div class="col-md-3" >
+                        <div class="semaphorScore">
+                            <p>{{(selectedManagerScore+selectedCustomerScore)/2}}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <p class="managerScoreText">Manager Score </p>
+                    </div>
+                    <div class="col-md-6" >
+                          <table class="managerCheckBox">
+                                <tr ng-repeat="managerScore in managerScoreBox">
+                                  <td>
+                                    <input type="checkbox" ng-model="managerScore.checked" ng-click="updateSelectionManager($index, managerScoreBox)">{{managerScore.name}}</input>
+                                  </td>
+                                </tr>
+                          </table>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <p class="improvementText">Improvement</p>
+                    </div>
+                    <div class="col-md-6 setTopMargin">
+<!--
+                                <select ng-model="improvement" ng-change="submitImprovement(improvement)" class="form-control improvementSelect"  >
+                                    <option ng-repeat='improvement in improvements' ng-click="submit()">{{improvement.description}}</option>
+                                </select>
+-->
+    <select class="form-control improvementSelect" ng-model="selectedImprovement.val" ng-options="improvement.description as improvement.description for improvement in improvements"  ng-change="submitImprovement(selectedImprovement.val)" ng-init="submitImprovement(selectedImprovement.val)"/>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <p class="resumeText">Resume</p>
+                    </div>
+                    <div class="col-md-6 setTopMargin"  >
+                        <textarea ng-model='textForTextArea' ng-change="submitTextArea(textForTextArea)" ng-init="submitTextArea(textForTextArea)" class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 submitAndCancel">
+                    <button type="button" ng-click="save()" class="btn btn-success">Submit</button>
+                    <button type="button" ng-click="cancel()" class="btn btn-info">Cancel</button>
+                </div>
+
+            </div>

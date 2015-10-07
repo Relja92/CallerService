@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Caller Service</title>
+       
+        <link rel="stylesheet" type="text/css" href="css/style.min.css" />
+        <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        
+        
+        <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="../bower_components/angular-mocks/angular-mocks.js"></script>
+        
+        <script>
+        // Check if the data was already loaded one time, if it was do not load original data anymore
+                if (localStorage.getItem("firstLoadCheck") === null) {
+                     $.getScript( "js/data.js" )
+                }
+        </script>
+        <script type="text/javascript" src='js/app.js'></script>
+        <script type="text/javascript" src="../bower_components/mustache.js/mustache.min.js"></script>
+        <script type="text/javascript" src="js/mustache.js"></script>
+        
+        
+
+        <script type="text/javascript" src="../bower_components/dirPagination/dirPagination.js"></script>
+<!--         <base href="../">-->
+    </head>
+
+    <body ng-app="app">
+        <div class="tile-area-header"></div>
+
+        <div ng-view></div>
+
+
+        <footer class="footer fg-white"></footer>
+    </body>
+</html>

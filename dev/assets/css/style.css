@@ -1,0 +1,178 @@
+html {
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+body {
+    background: #FFFFFF url("../img/bg.jpg") no-repeat center center fixed;
+		
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	
+    color: #030303;
+    font-family: "Segoe UI Light", Verdana, Helvetica, Sans-Serif;
+}
+
+.tile-area-header {
+    background-color: black;
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+.header-logo {
+    height: 55px;
+    margin-left: 50px;
+}
+
+.tile-area-controls {
+    position: fixed;
+    right: 10px;
+    top: 5px;
+}
+
+.footer {
+    width: 100%;
+    bottom: 0px;
+    background-color: black;
+    height: 50px;
+    text-align: right;
+    padding-right: 50px;
+    position: fixed;
+    z-index: 10;
+    color:white;
+    padding-right: 5%;
+}
+.footer>p{
+    width: 95%;
+}
+
+.page-content {
+    width: 70%;
+    background: rgba(157, 213, 255, 0.55);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;    
+    z-index: 1;
+}
+.main{
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+
+}
+.container{
+    min-width: 80%;
+}
+.callList{
+    height: 100%;
+    background-color: #9DD5FF;
+    opacity: 0.85;
+}
+.callSearch{
+    height: 100%;
+    background-color: #9DD5FF;
+    opacity: 0.85;
+}
+.table-responsive {height:100%;}
+
+
+.playPause{
+    text-align: center;
+}
+.playSound{
+    cursor: pointer;
+}
+.pauseSound{
+    cursor: pointer;
+}
+.customerScoreText{
+    font-size: 32px;
+    
+}
+
+.customerCheckBox >tbody{
+    display: inline-flex;
+}
+.customerCheckBox >tbody>tr>td{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline;
+}
+
+.managerCheckBox >tbody{
+    display: inline-flex;
+}
+
+.managerCheckBox >tbody>tr>td{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline;
+}
+.managerScoreText{
+    font-size: 32px;
+    
+}
+.improvementText{
+    font-size: 32px;
+}
+.resumeText{
+    font-size: 32px;
+}
+
+.setTopMargin{
+    margin-top: 1%;
+}
+.selectCalls{
+    float: right;
+    padding-bottom: 5%;
+}
+.searchText{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+.submitAndCancel{
+    padding-top: 4%;
+    text-align: center;
+}
+.semaphorScore{
+    background-color: greenyellow;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.semaphorScore>p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.table >thead>tr>td{
+    font-weight: 700;
+}
+.dirPagination{
+    padding-left: 40%;
+}
+
+.jasmine_reporter { background-color: #eeeeee; padding: 0; margin: 0; }

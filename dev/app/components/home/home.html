@@ -1,0 +1,100 @@
+ <div class='container main'>
+                <audio id="audio"></audio>
+                <div class='row selectCalls'>
+                    <button type="button" ng-click='showAllCalls()' class="btn btn-success">All calls</button>
+                    <button type="button" ng-click='showLastWeekCalls()' class="btn btn-success">Last week calls</button>
+                </div>
+                <div class='row'>
+                 <div class="col-lg-10 col-md-10">
+                    <div class='callList'>
+                        <div class="table-responsive">
+                           <table class="table table-hover">
+                              <thead>
+                                 <tr>
+                                     <td>Play/Pause</td>
+                                     <td>Type</td>
+                                     <td>Direction</td>
+                                     <td>Time</td>
+                                     <td>Agent ID</td>
+                                     <td>Customer ID</td>
+                                     <td>Duration</td>
+                                     <td>Evaluation/Improvement</td>
+                                     <td></td>
+                                 </tr>
+                              </thead>
+                              <tbody id='myTable'>
+                                 <tr dir-paginate="neededItem in neededItems|filter:query:strict|itemsPerPage:5">
+                                    <td ><span ng-click='playCall()' type="button" class="glyphicon glyphicon-play"></span> <span ng-click='pauseCall()' class="glyphicon glyphicon-pause"></td>
+
+                                    <td >
+                                        {{neededItem.callType}}
+                                    </td>
+                                    <td >
+                                        {{neededItem.callDirection}}
+                                    </td>
+                                    <td >
+                                        {{neededItem.when}}
+                                    </td>
+                                    <td  >
+                                        {{neededItem.agentId }}
+                                    </td>
+                                    <td >
+                                        {{neededItem.clientId}}
+                                    </td>
+                                    <td >
+                                        {{neededItem.duration}}
+                                    </td>
+                                   <td >
+                                        {{neededItem.evaluation}} / {{neededItem.improvement}} 
+                                    </td>
+                                    <td><button class="btn btn-success"  ng-click="evaluate()">Evaluate</button></td>
+
+
+                                 </tr>
+
+                              </tbody>
+                           </table>
+                           <dir-pagination-controls class='dirPagination'
+                                max-size="5"
+                                direction-links="true"
+                                boundary-links="true" >
+                            </dir-pagination-controls>
+                        </div>  
+
+
+                    </div>
+                 </div>
+                 <div class="col-lg-2 col-md-2">
+                     <div>
+                        <p class='searchText'>Search by:</p>
+                     </div>
+                    <div class='callSearch'>
+                        <div class=" col-md-12">
+                            <label>Agent ID:</label>
+                        </div >
+                        <div class="col-md-12">
+                            <input ng-model="query.agentId" type="text" class="form-control">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Evaluation Score:</label>
+                        </div >
+                        <div class="col-md-12">
+                            <input ng-model="query.evaluation" type="text" class="form-control">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Time(days ago):</label>
+                        </div >
+                        <div class="col-md-12">
+                            <input ng-model="query.durationInDays" type="text" class="form-control">
+                        </div>
+                         <div class="col-md-12">
+                            <label>Call Length (minutes):</label>
+                        </div >
+                        <div class="col-md-12">
+                            <input ng-model="query.durationInMinutes" type="text" class="form-control">
+                        </div>
+
+                    </div>
+                 </div>
+                </div>
+           </div>
